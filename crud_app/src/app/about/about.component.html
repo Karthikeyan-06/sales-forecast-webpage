@@ -1,0 +1,33 @@
+
+<div class="all"  id="all">
+  
+    <div class="top">
+      <mat-card class="top-card" id="top-card">
+        
+        <button mat-button routerLink="" class="button"> <mat-icon>home</mat-icon> Home</button>
+        <button mat-button routerLink="../login" class="button"> <mat-icon>account_circle</mat-icon> Login</button>
+        <button mat-button class="button" id="colorbutton" (click)="changecolorall()"> <mat-icon>brightness_high</mat-icon> Theme</button>
+        <button mat-button routerLink="../about"  class="button"> <mat-icon>help</mat-icon> About Us</button>
+        <button mat-button  (click)="reloadCurrentPage()"  class="button"> <mat-icon>exit_to_app</mat-icon> Log Out</button>
+      </mat-card>
+    </div>
+
+    <div class="middle">
+        <mat-card class="middle-card" id="middle-card">
+            <h1>About ONE TAP:</h1>
+            <p><mat-icon>touch_app</mat-icon>ONE TAP is an online portal to help users predict the future sales of their company.</p>
+            <p>Sales forecasts can be used to identify benchmarks and determine incremental impacts of new initiatives, plan resources in response to expected demand, and project future budgets.</p>
+            <hr>
+            <h2>Founder:</h2>
+            <p>KARTHIKEYAN R</p>
+            <hr>
+            <h2>Contact:</h2>
+            <p><mat-icon> dialer_sip</mat-icon>Please mail us at onetap@gmail.com or via Telegram group (Onetap).</p>
+            <hr>
+            <h2>Fees:</h2>
+            <p><mat-icon>credit_card</mat-icon>Users are not bound to pay any fees for using the services offered by us.</p>
+
+        </mat-card>
+    </div>
+    
+</div>

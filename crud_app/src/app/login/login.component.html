@@ -1,0 +1,37 @@
+<div class="all" id="all">
+	<div class="top">
+		<mat-card class="top-card"  id="top-card">
+			<button mat-button routerLink="" class="button"> <mat-icon>home</mat-icon> Home</button>
+			<button mat-button routerLink="../login" class="button"> <mat-icon>account_circle</mat-icon> Login</button>
+			<button mat-button  class="button" id="colorbutton" (click)="changecoloralllogin()"> <mat-icon>brightness_high</mat-icon> Theme</button>
+			<button mat-button routerLink="../about"  class="button"> <mat-icon>help</mat-icon> About Us</button>
+			<button mat-button (click)="reloadCurrentPage()" class="button"> <mat-icon>exit_to_app</mat-icon> Log Out</button>
+		</mat-card>
+	</div>
+
+
+	<div class="login-box">
+		<h1 class="text">Login</h1>
+		<form action="">
+			<div class="user-box">
+				<input type="text"  name="" required="" #box1>
+				<label>Username</label>
+			</div>
+			
+			<div class="user-box">
+				<input type="password" #box2>
+				<label for="">Password</label>
+			</div>
+			<a (click)="check(box1.value,box2.value)" class="submit">
+				<span></span>
+				<span></span>
+				<span></span>
+				<span></span>
+				Login
+			</a>
+		</form>
+		<mat-icon>f103</mat-icon>
+		
+	</div>
+</div>
+

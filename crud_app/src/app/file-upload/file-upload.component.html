@@ -1,0 +1,51 @@
+<div class="all"  id="all">
+  
+    <div class="top">
+      <mat-card class="top-card" id="top-card">
+        
+        <button mat-button routerLink="" class="button"> <mat-icon>home</mat-icon> Home</button>
+        <button mat-button routerLink="../login" class="button"> <mat-icon>account_circle</mat-icon> Login</button>
+        <button mat-button class="button" id="colorbutton" (click)="changecolorall()"> <mat-icon>brightness_high</mat-icon> Theme</button>
+        <button mat-button routerLink="../about"  class="button"> <mat-icon>help</mat-icon> About Us</button>
+        <button mat-button  (click)="reloadCurrentPage()"  class="button"> <mat-icon>exit_to_app</mat-icon> Log Out</button>
+      </mat-card>
+    </div>
+    <div class="inputform">
+      <mat-card class="inputcard">
+        <div class="uploadtext">Upload</div><br><br>
+
+        <mat-form-field appearance="legacy" class="hi">
+          <mat-label class="namelable"> Name</mat-label>
+          <input matInput #name>
+        </mat-form-field>
+        <mat-form-field appearance="legacy">
+          <mat-label class="input-text" class="namelable">Select Time Period</mat-label>
+          <mat-select  class="input-text">
+            <mat-option value="one" >5 Month</mat-option>
+            <mat-option value="two">10 month</mat-option>
+            <mat-option value="two">15 month</mat-option>
+          </mat-select>
+        </mat-form-field>
+        <mat-form-field floatPlaceholder="never" class="namelable">
+          <input [hidden]="true" (change)="onFileSelect($event)" type="file" accept=".csv" #fileSelect >
+          <label class="namelable">..Upload CSV file..</label>
+          <input readonly matInput [(ngModel)]="filename"   style="color:black;"/>
+          <button *ngIf="this.file" (click)="deleteFile(); fileSelect.value='';" matSuffix matTooltip="Remove selected file"
+                  [matTooltipPosition]="'above'" type="button" color="warn" mat-icon-button>
+                  <mat-icon>close</mat-icon>
+                </button>
+          <button matSuffix mat-icon-button (click)="fileSelect.click();"  matTooltip="Select a file" [matTooltipPosition]="'above'">
+            <mat-icon>file_upload</mat-icon>
+          </button> 
+          
+        </mat-form-field><br><br>
+        <button (click)="fileUpload()" (click)="use(name.value)"  mat-flat-button style=" min-height: 40px;" class="submit">
+          <span *ngIf="!showLoader">Send</span>
+          <mat-spinner style="margin-left: 43%;" diameter="25" strokeWidth="4" *ngIf="showLoader"></mat-spinner>
+        </button>
+        
+      </mat-card>
+
+    </div>
+  
+</div>
